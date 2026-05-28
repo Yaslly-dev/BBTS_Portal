@@ -1,0 +1,22 @@
+
+/* 1. Importação obrigatória do Tailwind v4 (O motor que faz tudo funcionar) */
+@import "tailwindcss";
+
+/* 2. Reset básico e configurações de base (Deixa o visual mais profissional) */
+@layer base {
+  :root {
+    --bg-color: #f8fafc; /* Um cinza muito claro, quase branco, ótimo para portais */
+    --text-color: #0f172a; /* Um azul/cinza bem escuro para facilitar a leitura */
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+  }
+}
