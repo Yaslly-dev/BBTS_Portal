@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Busca de Produtos</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="topo">
+
+            <h1>🔎 Busca de Produtos</h1>
+
+            <form method="POST">
+
+                <input
+                    type="text"
+                    name="produto"
+                    placeholder="Digite o produto"
+                    required
+                >
+
+                <input
+                    type="text"
+                    name="marca"
+                    placeholder="Marca"
+                >
+
+                <input
+                    type="number"
+                    name="preco_max"
+                    placeholder="Preço máximo"
+                >
+
+                <button type="submit">
+                    Buscar
+                </button>
+
+            </form>
+
+        </div>
+
+        {% if resultados %}
+
+            <div class="contador">
+
+                {{ resultados|length }}
+                produto(s) encontrado(s)
+
+            </div>
+
+            <div class="cards">
+
+                {% for item in resultados %}
+
+                <div class="card">
+
+                    <h3>
+                        {{ item.nome }}
+                    </h3>
+
+                    <div class="preco">
+
+                        {{ item.preco }}
+
+                    </div>
+
+                    <div class="site">
+
+                        🏪 {{ item.site }}
+
+                    </div>
+
+                    <a
+                        href="{{ item.link }}"
+                        target="_blank"
+                        class="botao"
+                    >
+                        Ver Produto
+                    </a>
+
+                </div>
+
+                {% endfor %}
+
+            </div>
+
+        {% else %}
+
+            <div class="sem-resultados">
+
+                Faça uma busca para encontrar produtos.
+
+            </div>
+
+        {% endif %}
+
+    </div>
+
+</body>
+
+</html>
