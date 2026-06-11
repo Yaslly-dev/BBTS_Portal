@@ -91,7 +91,7 @@ src/
 └── main.tsx                   # Ponto de entrada da aplicação
 ```
 
-## ⚙️ Instalação
+## ⚙️ Instalação Frontend
 
 ### 1. Clone o repositório
 
@@ -121,9 +121,44 @@ npm install
 ```bash
 npm run dev
 ```
+## 🕷️ Web Crawler (Extração de Dados)
 
+O projeto conta com um Web Crawler desenvolvido em Python para a coleta e automação de dados referentes às licitações. Para garantir que todas as dependências funcionem corretamente sem causar conflitos globais, o crawler deve ser executado dentro de um ambiente virtual.
+
+### ⚙️ Pré-requisitos do Crawler
+- [Python 3.x](https://www.python.org/downloads/) instalado na máquina.
+
+### 🚀 Como configurar e executar
+
+**1. Abra o terminal na pasta do crawler:**
+Certifique-se de navegar até o diretório onde os arquivos do crawler (e o `requirements.txt`) estão localizados.
+
+**2. Crie o Ambiente Virtual (venv):**
+Isso cria um ambiente isolado para o projeto.
+```bash
+python -m venv venv
 ---
-
+```
+**3. Ative o Ambiente Virtual (venv):**
+```bash
+.\venv\Scripts\activate
+```
+---
+**4. Instale as dependências:**
+```bash
+pip install -r requirements.txt
+```
+**5. Execute o projeto:**
+```bash
+python app.py
+```
+---
 ## 👨‍💻 Equipe de Desenvolvimento
 
 **SQUAD 11 - Universidade Católica de Brasília**
+- Yasmin Gabrielly: líder e DBA
+- Áquila Lopo: vice-líder e desenvolvedor do web crawler
+- Taís Barbosa: desenvolvedora frontend
+- Victor de Jesus: desenvolvedor do banco de dados
+- Bruno Braga: integrande da equipe
+- Dhavi Pinheiro: integrante da equipe
